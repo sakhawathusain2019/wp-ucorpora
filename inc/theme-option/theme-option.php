@@ -134,67 +134,36 @@ function ucorpa_theme_option($option){
                         'title'=>'Upload Logo',
                         'add_title'=>'Add Logo',
                     ),
-                    array(
-                        'id'        => 'contact_fields_1',
-                        'type'      => 'fieldset',
-                        'title'     => 'Contact',
-                        'fields'    => array(
-                            array(
-                                'type'    => 'subheading',
-                                'content' => 'Contact Fields Here',
-                            ),
-
-                            array(
-                                'id'    => 'contact_fields_1_icon',
-                                'type'  => 'icon',
-                                'title' => 'Add Icon',
-                            ),
-                            array(
-                                'id'    => 'contact_fields_1_con',
-                                'type'  => 'text',
-                                'title' => 'Description',
-                                'default'=>'call us anytime',
-                            ),
-                            array(
-                                'id'    => 'contact_fields_1_number',
-                                'type'  => 'text',
-                                'title' => 'Contact Number',
-                                'default'=>'+880123-467-789',
-
-                            ),
-                ),
-            ),
 
                     array(
-                         'id'        => 'contact_fields_2',
-                         'type'      => 'fieldset',
-                         'title'     => 'Contact',
-                         'fields'    => array(
-                        array(
-                            'type'    => 'subheading',
-                            'content' => 'Open Or Close',
-                        ),
-
-                        array(
-                            'id'    => 'contact_fields_2_icon',
-                            'type'  => 'icon',
-                            'title' => 'Add Icon',
-                        ),
-                        array(
-                            'id'    => 'contact_fields_2_open',
-                            'type'  => 'text',
-                            'title' => 'Open',
-                            'default'=>'opeening time',
-                        ),
-                        array(
-                            'id'    => 'contact_fields_2_time',
-                            'type'  => 'text',
-                            'title' => 'Time',
-                            'default'=>'mon-sat: 9.00-18.00',
-
-                        ),
+                        'id'=> 'show_contact_logo_section',
+                        'type'=>'switcher',
+                        'title'=>'Are You Show this Contact Section',
+                        'default'=> true,
                     ),
-                ),
+                    array(
+                        'id'=>'contact_logo_sec',
+                        'type'=>'textarea',
+                        'title'=>'Call us anytime',
+                        'default'=>'<i class="fas fa-headphones"></i>
+                                    <p>Call us anytime</p>
+                                    <h4>+880123-467-789</h4>'
+                    ),
+
+                    array(
+                        'id'=> 'show_opening_section',
+                        'type'=>'switcher',
+                        'title'=> 'Are You Show This Section',
+                        'default'=> true,
+                    ),
+                    array(
+                        'id'=>'opening_logo_sec',
+                        'type'=>'textarea',
+                        'title'=>'Opening Time',
+                        'default'=>'<i class="fas fa-stopwatch"></i>
+                                    <p>Opeening Time</p>
+                                    <h4>Mon-Sat: 9.00-18.00</h4>'
+                    ),
 
 
         ),

@@ -48,6 +48,12 @@
            $location_address = cs_get_option('location_address');
 
            $logo = cs_get_option('logo');
+           $contact_logo_sec = cs_get_option('contact_logo_sec');
+
+           $opening_logo_sec = cs_get_option('opening_logo_sec');
+
+           $show_contact_logo_section = cs_get_option('show_contact_logo_section');
+           $show_opening_section = cs_get_option('show_opening_section');
 
            $logoimg = wp_get_attachment_image_src($logo,'full');
 
@@ -102,18 +108,18 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <div class="widget-main">
                                 <!-- single widget -->
+                                <?php if ($show_contact_logo_section) { ?>
                                 <div class="single-widget">
-                                    <i class="<?php echo cs_get_option('contact_fields_1_icon');?>"></i>
-                                    <p><?php echo cs_get_option('contact_fields_1_con');?></p>
-                                    <h4><?php echo cs_get_option('contact_fields_1_number');?></h4>
+                                    <?php echo ($contact_logo_sec);?>
                                 </div>
+                                <?php } ?>
                                 <!--/ end single widget -->
                                 <!-- single widget -->
+                                <?php if ($show_opening_section) {?>
                                 <div class="single-widget">
-                                    <i class="<?php echo cs_get_option('contact_fields_2_icon');?>"></i>
-                                    <p><?php echo cs_get_option('contact_fields_2_open');?></p>
-                                    <h4><?php echo cs_get_option('contact_fields_2_time');?></h4>
+                                    <?php echo ($opening_logo_sec);?>
                                 </div>
+                                <?php } ?>
                                 <!--/ end single widget -->
                                 <!-- single widget -->
                                 <div class="single-widget button">

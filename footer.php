@@ -10,7 +10,17 @@
  */
 
 ?>
+<?php
+if (function_exists('cs_get_option')){
 
+    $f_copyright = cs_get_option('f_copyright');
+
+
+}
+
+
+
+?>
 
 <!-- Footer Area -->
 <footer class="footer">
@@ -130,7 +140,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="copyright-content">
-                        <?php echo cs_get_option('f_copyright');?>
+                        <?php echo ($f_copyright);?>
                     </div>
                 </div>
             </div>
