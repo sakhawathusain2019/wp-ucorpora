@@ -85,25 +85,18 @@ function ucorpa_theme_option($option){
                 'title'     => 'Top Header',
                 'icon'      => 'fa fa-level-up',
                 'fields'    => array(
+                    array(
+                        'id'=>'show_top_bar',
+                        'type'=>'switcher',
+                        'title'=> 'Show or Hide Top Header',
+                        'default'=> true,
+                    ),
                 array(
                 'id'=>'t_welcome',
                 'type'=>'text',
                 'title'=>'Top Header Welcome Notice',
                 'default'=>'welcome to ucorpa company!',
             ),
-              array(
-                  'id'      => 'top_color',
-                  'type'    => 'color_picker',
-                   'title'   => 'Top Header Background color',
-                   'default' => '#F6F6F6',
-                ),
-              array(
-                  'id'      => 'top_font_color',
-                  'type'    => 'color_picker',
-                   'title'   => 'Font Color',
-                   'default' => '#fff',
-                ),
-
              array(
                 'id'=>'t_welcome_icon',
                 'type'=>'icon',
@@ -128,6 +121,11 @@ function ucorpa_theme_option($option){
                 'title'     => 'Logo Section',
                 'icon'      => 'fa fa-upload',
                 'fields'    => array(
+                    array(
+                        'id'=>'show_logo_section',
+                        'type'=>'switcher',
+                        'title'=> 'Show or Hide Logo section',
+                    ),
                     array(
                         'id'=>'logo',
                         'type'=>'image',
@@ -163,6 +161,18 @@ function ucorpa_theme_option($option){
                         'default'=>'<i class="fas fa-stopwatch"></i>
                                     <p>Opeening Time</p>
                                     <h4>Mon-Sat: 9.00-18.00</h4>'
+                    ),
+                    array(
+                        'id'=>'show_logo_section_button',
+                        'type'=>'switcher',
+                        'title'=>'Show Or Hide Button',
+                        'default'=>true,
+                    ),
+                    array(
+                        'id'=>'logo_section_button',
+                        'type'=>'textarea',
+                        'title'=>'Button',
+                        'default'=>'<a href="#" class="btn">Get A Quote</a>'
                     ),
 
 

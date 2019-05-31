@@ -16,45 +16,27 @@
             <!-- web font -->
             <link href="https://fonts.googleapis.com/css?family=poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-            <style>
-                .header .topbar {
-                    background-color: <?php echo ($top_color);?> !important;
-                }
-                .header .single-top p {
-                    color: <?php echo ($top_font_color);?> !important;
-                }
-                .header .single-top a {
-                    color: <?php echo ($top_font_color);?> !important;
-                }
-            </style>
+
             <?php wp_head();?>
         </head>
         <body <?php body_class();?>>
         <?php
         //function condition
         if (function_exists('cs_get_option')){
-           $top_color = cs_get_option('top_color');
-
-           $top_font_color = cs_get_option('top_font_color');
-
+           $show_logo_section = cs_get_option('show_logo_section');
            $preeloader = cs_get_option('show_preeloader');
-
            $top_welcome_icon = cs_get_option('t_welcome_icon');
-
            $top_welcome_title = cs_get_option('t_welcome');
-
            $t_email = cs_get_option('t_email');
-
            $location_address = cs_get_option('location_address');
-
            $logo = cs_get_option('logo');
            $contact_logo_sec = cs_get_option('contact_logo_sec');
-
            $opening_logo_sec = cs_get_option('opening_logo_sec');
-
            $show_contact_logo_section = cs_get_option('show_contact_logo_section');
            $show_opening_section = cs_get_option('show_opening_section');
-
+           $show_top_bar = cs_get_option('show_top_bar');
+           $logo_section_button =cs_get_option('logo_section_button');
+           $show_logo_section_button =cs_get_option('show_logo_section_button');
            $logoimg = wp_get_attachment_image_src($logo,'full');
 
         }
@@ -70,7 +52,9 @@
 
         <!-- header area -->
         <header class="header">
+
             <!-- topbar -->
+            <?php if ($show_top_bar){?>
             <div class="topbar">
                 <div class="container">
                     <div class="row">
@@ -91,9 +75,13 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+            <?php } ?>
             <!-- end topbar -->
+
             <!-- middle header -->
+            <?php if ($show_logo_section) {?>
             <div class="middle-header">
                 <div class="container">
                     <div class="row">
@@ -122,15 +110,19 @@
                                 <?php } ?>
                                 <!--/ end single widget -->
                                 <!-- single widget -->
+                                <?php if($show_logo_section_button) {?>
                                 <div class="single-widget button">
-                                    <a href="#" class="btn">get a quote</a>
+                                    <?php echo ($logo_section_button);?>
                                 </div>
+                                <?php }?>
                                 <!--/ end single widget -->
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php } ?>
             <!-- end middle header -->
             <!-- header inner -->
             <div class="main-menu">
